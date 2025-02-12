@@ -11,7 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        pinkNeon: "#ff66c4"
+        pinkNeon: "#ff66c4",
+        nude: "#f2d2c3"
       },
     },
   },
