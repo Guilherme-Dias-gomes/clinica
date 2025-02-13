@@ -15,6 +15,9 @@ export default {
         nude: "#e9b286",
         marrom: "#fcf3e9"
       },
+      fontFamily: {
+        cinzel: ["Cinzel", "serif"],
+      },
     },
   },
   plugins: [],
