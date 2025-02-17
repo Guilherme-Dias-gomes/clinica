@@ -106,26 +106,72 @@ export default function Home() {
           <h1 className="text-5xl">Dra. Rosiane Gomes</h1>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
-            <p>Enfermeira graduada pela Universidade Italo, em São Paulo - SP.</p>
+            <p>
+              Enfermeira graduada pela Universidade Italo, em São Paulo - SP.
+            </p>
           </div>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
-            <p>Possui especialização em Dermatologia pela Instituição Superior de Medicina Dermatológica (ISMD).</p>
+            <p>
+              Possui especialização em Dermatologia pela Instituição Superior de
+              Medicina Dermatológica (ISMD).
+            </p>
           </div>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
             <p>Especialista em Dermatologia Estética, Cirúrgica e Clínica</p>
           </div>
           <div className="flex justify-center">
-              <a
-                href=""
-                className="p-4 font-bold rounded-full text-center bg-nude"
-              >
-                DESCUBRA SUA MELHOR VERSÃO
-              </a>
-            </div>
+            <a
+              href=""
+              className="p-4 font-bold rounded-full text-center bg-nude"
+            >
+              DESCUBRA SUA MELHOR VERSÃO
+            </a>
+          </div>
         </div>
         <div className="py-80 px-60 bg-gray-400 rounded-3xl"></div>
+      </section>
+      <section className="flex h-screen items-center justify-around text-black w-1/2">
+        <div className="bg-marrom p-8 rounded-lg shadow-lg ">
+          <h2 className="text-xl font-bold text-black mb-2">
+            Me envie uma mensagem!
+          </h2>
+          <p className=" mb-4">
+            Estou disponível para novos projetos e oportunidades. Entre em
+            contato comigo para marcarmos uma conversa.
+          </p>
+
+          <form className="space-y-4">
+            <div className="flex space-x-2">
+              <input
+                type="text"
+                placeholder="Nome"
+                className="w-1/2 p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+              />
+              <input
+                type="text"
+                placeholder="Sobrenome"
+                className="w-1/2 p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+              />
+            </div>
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+            />
+
+            <textarea
+              placeholder="Digite sua mensagem..."
+              className="w-full p-2 h-32 border border-purple-500 bg-transparent rounded-md placeholder-gray-400 resize-none"
+            ></textarea>
+
+            <button className="w-full bg-gradient-to-r from-blue-600 to-purple-500 font-bold py-2 rounded-md">
+              Enviar
+            </button>
+          </form>
+        </div>
       </section>
     </div>
   );
