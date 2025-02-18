@@ -1,13 +1,18 @@
 interface CardProps {
-    title: string
-    content: string
+  content: string;
+  bg?: string;
 }
 
-export default function Card({title, content}: CardProps) {
-    return(
-        <div className="py-56 px-20 bg-nude rounded-xl text-center">
-            <h1 className="text-xl font-bold">{title}</h1>
-            <p className="text-gray-600 mt-2">{content}</p>
-        </div>
-    )
+export default function Card({ content, bg }: CardProps) {
+  return (
+    <div
+      className="relative flex flex-col justify-end h-96 w-72 rounded-xl text-white bg-cover bg-center bg-no-repeat p-4"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      {/* Conteúdo no final */}
+      <p className="text-black font-bold text-2xl bg-white/50 p-2 rounded text-center">
+        {content}
+      </p>
+    </div>
+  );
 }

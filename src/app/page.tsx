@@ -37,8 +37,8 @@ export default function Home() {
         </nav>
       </header>
       <section className="flex h-screen justify-evenly items-center">
-        <div className="flex w-1/2 flex-col gap-4 ">
-          <h1 className="text-6xl pl-20">
+        <div className="flex w-1/2 flex-col gap-4">
+          <h1 className="text-6xl ">
             Realce sua beleza natural e aumente sua autoestima com um cuidado
             completo da pele
           </h1>
@@ -56,16 +56,10 @@ export default function Home() {
       <section className="flex flex-col h-screen bg-marrom items-center justify-around">
         <h1 className="font-bold text-4xl">Procedimentos</h1>
         <div className="flex justify-around w-full">
-          <Card title="BOTOX" content="Este é meu teste de components" />
-          <Card
-            title="Preenchimento labial"
-            content="Este é meu teste de components"
-          />
-          <Card
-            title="Limpeza de pele"
-            content="Este é meu teste de components"
-          />
-          <Card title="Vasos" content="Este é meu teste de components" />
+          <Card content="Este é meu teste de components" bg="estetica.jpg" />
+          <Card content="Este é meu teste de components" bg="estetica.jpg" />
+          <Card content="Este é meu teste de components" bg="estetica.jpg" />
+          <Card content="Este é meu teste de components" bg="estetica.jpg" />
         </div>
         <a
           href=""
@@ -75,15 +69,15 @@ export default function Home() {
         </a>
       </section>
       <section className="flex h-screen items-center justify-around">
-        <div className="flex items-center w-4/5 text-center">
-          <div className="py-80 px-60 bg-gray-400 rounded-3xl"></div>
+        <div className="flex items-center w-4/5 h-full p-10 text-center">
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/estetica.jpg')] bg-cover bg-center rounded-3xl p-10"></div>
           <div className="flex flex-col h-1/2 p-6  gap-4 w-1/2">
             <h1 className="font-bold text-4xl">
               Venha conhecer a Dra. Rosiane Gomes
             </h1>
             <p className=" text-2xl">
               Um espaço cuidadosamente projetado para proporcionar uma
-              experiência aconchegante, focada no autocuidado e no bem-estar{" "}
+              experiência aconchegante, focada no autocuidado e no bem-estar
             </p>
             <div className="flex justify-center">
               <a
@@ -101,25 +95,29 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-screen bg-marrom items-center justify-around">
-        <div className="flex flex-col gap-10 w-1/3">
+      <section className="flex h-screen bg-marrom items-center ">
+        <div className="flex flex-col gap-10 w-4/5 p-10">
           <h1 className="text-5xl">Dra. Rosiane Gomes</h1>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
             <p>
-              Enfermeira graduada pela Universidade Italo, em São Paulo - SP.
+              Enfermeira graduada pela Centro Universitario Italo Brasileiro, em
+              São Paulo - SP.
             </p>
           </div>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
             <p>
-              Possui especialização em Dermatologia pela Instituição Superior de
-              Medicina Dermatológica (ISMD).
+              Possui especialização em Enfermagem Estética pelo Instituto de
+              Pesquisa e Educação em Saúde de São Paulo (IPESSP).
             </p>
           </div>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
             <img src="correto.png" alt="correto" className="w-10" />
-            <p>Especialista em Dermatologia Estética, Cirúrgica e Clínica</p>
+            <p>
+              Especialista em Cuidados com a Saúde e o Bem-Estar do Paciente,
+              com pós-graduação em Urgência e Emergência pela instituição FMU.
+            </p>
           </div>
           <div className="flex justify-center">
             <a
@@ -130,16 +128,21 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="py-80 px-60 bg-gray-400 rounded-3xl"></div>
+        <div className="flex items-center w-4/5 h-full p-10  ">
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/estetica.jpg')] bg-cover bg-center bg-gray-400 rounded-3xl"></div>
+        </div>
       </section>
-      <section className="flex h-screen items-center justify-around text-black w-1/2">
-        <div className="bg-marrom p-8 rounded-lg shadow-lg ">
-          <h2 className="text-xl font-bold text-black mb-2">
-            Me envie uma mensagem!
-          </h2>
-          <p className=" mb-4">
-            Estou disponível para novos projetos e oportunidades. Entre em
-            contato comigo para marcarmos uma conversa.
+      <section className="flex h-screen w-full items-center text-center justify-center text-black">
+        <div className="bg-marrom p-8 rounded-lg shadow-lg w-1/2 shadow-black">
+          <h1 className="text-2xl font-bold text-black mb-2">
+            Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
+          </h1>
+          <p className=" mb-4 text-lg">
+            Uma avaliação personalizada é o primeiro passo para alcançar seus
+            objetivos de saúde e bem-estar. Nós vamos entender
+            suas necessidades e oferecer as melhores opções para você,
+            garantindo cuidados exclusivos e resultados eficazes. Venha para a
+            nossa clínica e cuide-se com quem entende de você!
           </p>
 
           <form className="space-y-4">
@@ -147,27 +150,27 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Nome"
-                className="w-1/2 p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+                className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
               />
               <input
-                type="text"
-                placeholder="Sobrenome"
-                className="w-1/2 p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+                type="tel"
+                placeholder="Telefone"
+                className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
               />
             </div>
 
             <input
               type="email"
               placeholder="Email"
-              className="w-full p-2 border border-purple-500 bg-transparent rounded-md placeholder-gray-400"
+              className="w-full p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
             />
 
             <textarea
               placeholder="Digite sua mensagem..."
-              className="w-full p-2 h-32 border border-purple-500 bg-transparent rounded-md placeholder-gray-400 resize-none"
+              className="w-full p-2 h-32 border border-nude bg-transparent rounded-md placeholder-gray-400 resize-none"
             ></textarea>
 
-            <button className="w-full bg-gradient-to-r from-blue-600 to-purple-500 font-bold py-2 rounded-md">
+            <button className="w-full bg-gradient-to-r from-nude to-purple-500 font-bold py-2 rounded-md">
               Enviar
             </button>
           </form>
