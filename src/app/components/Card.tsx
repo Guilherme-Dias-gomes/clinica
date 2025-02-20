@@ -6,7 +6,7 @@ interface CardProps {
 export default function Card({ content, bg }: CardProps) {
   return (
     <div
-      className="relative flex flex-col justify-end h-96 w-72 rounded-xl text-white bg-cover bg-center bg-no-repeat p-4"
+      className="relative flex flex-col justify-end h-96 w-72 rounded-xl text-white bg-cover bg-center bg-no-repeat p-4 hover:scale-90 transition-transform duration-200 cursor-pointer"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* Conteúdo no final */}

@@ -72,7 +72,10 @@ export default function Home() {
         <h1 className="font-bold text-4xl">Procedimentos</h1>
         <div className="flex justify-around w-full flex-wrap gap-10 p-5">
           <Card content="Botox" bg="botox.jpg" />
-          <Card content="Preenchimento com Ácido hialurônico" bg="preenchimento.jpg" />
+          <Card
+            content="Preenchimento com Ácido hialurônico"
+            bg="preenchimento.jpg"
+          />
           <Card content="Fio de PDO" bg="pdo.jpg" />
           <Card content="Bioestimulador de Colageno" bg="bioestimulador.jpg" />
           <Card content="Limpeza de Pele" bg="limpeza.jpg" />
@@ -87,10 +90,10 @@ export default function Home() {
           AGENDAR CONSULTA
         </a>
       </section>
-      <section className="flex h-screen items-center justify-around">
-        <div className="flex items-center w-4/5 h-full p-10 text-center">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center rounded-3xl p-10"></div>
-          <div className="flex flex-col h-1/2 p-6  gap-4 w-1/2">
+      <section className="flex h-screen items-center justify-around ">
+        <div className="flex items-center w-4/5 h-full text-center">
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center"></div>
+          <div className="flex flex-col h-1/2 p-6 gap-4 w-1/2">
             <h1 className="font-bold text-4xl">
               Venha conhecer a Dra. Rosiane Gomes
             </h1>
@@ -114,7 +117,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-screen bg-marrom items-center ">
+      <section className="flex h-screen just bg-marrom items-center">
         <div className="flex flex-col gap-10 w-4/5 p-10">
           <h1 className="text-5xl">Dra. Rosiane Gomes</h1>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
@@ -147,8 +150,8 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="flex items-center w-4/5 h-full p-10  ">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-centerounded-3xl"></div>
+        <div className="flex items-center w-4/5 h-full">
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center bg-centerounded-3xl"></div>
         </div>
       </section>
       <section className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
@@ -216,50 +219,56 @@ export default function Home() {
         <div className="w-full bg-[url('/background.svg')] bg-cover bg-center">
           <Location />
           <div className="flex flex-col sm:flex-row sm:gap-10 justify-around text-start p-10 ">
-          {[
-            {
-              href: "mailto:guilhermediasgomes2@gmail.com",
-              icon: "gmail.png",
-              label: "Email",
-              name: "guilhermediasgomes2@gmail.com",
-            },
-            {
-              href: "https://wa.me/5511952279968",
-              icon: "whatsapp.png",
-              label: "WhatsApp",
-              name: "(11) 95227-9968",
-            },
-            {
-              href: "https://www.instagram.com/dra_rosiane_gomes/",
-              icon: "instagram.png",
-              label: "instagram",
-              name: "Dra_rosiane_gomes",
-            },
-          ].map((contact, index) => (
-            <a
-              key={index}
-              href={contact.href}
-              className="flex items-center group w-full sm:w-auto"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <img
-                  src={contact.icon}
-                  alt={contact.label}
-                  className="w-14 mr-2 relative"
-                />
-              </div>
-              <div>
-                <h3 className="font-bold">{contact.label}</h3>
-                <p>{contact.name}</p>
-              </div>
-            </a>
-          ))}
+            {[
+              {
+                href: "mailto:guilhermediasgomes2@gmail.com",
+                icon: "gmail.png",
+                label: "Email",
+                name: "guilhermediasgomes2@gmail.com",
+              },
+              {
+                href: "https://wa.me/5511952279968",
+                icon: "whatsapp.png",
+                label: "WhatsApp",
+                name: "(11) 95227-9968",
+              },
+              {
+                href: "https://www.instagram.com/dra_rosiane_gomes/",
+                icon: "instagram.png",
+                label: "Instagram",
+                name: "Dra_rosiane_gomes",
+              },
+            ].map((contact, index) => (
+              <a
+                key={index}
+                href={contact.href}
+                className="flex items-center group w-full sm:w-auto"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img
+                    src={contact.icon}
+                    alt={contact.label}
+                    className="w-14 mr-2 relative"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold">{contact.label}</h3>
+                  <p>{contact.name}</p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-        </div>
-        <h1 className="font-bold">
-          Guilherme Dias – Copyright 2025. Todos os direitos reservados.
-        </h1>
+        <span className="font-bold text-center items-center flex">
+          <a
+            href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
+            className="mr-2"
+          >
+            Guilherme Dias 
+          </a>
+          <p>– Copyright 2025. Todos os direitos reservados.</p>
+        </span>
       </section>
     </div>
   );
