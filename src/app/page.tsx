@@ -8,6 +8,41 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('E-mail enviado com sucesso!');
+      } else {
+        alert('Erro ao enviar o e-mail.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao enviar o e-mail.');
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -155,49 +190,62 @@ export default function Home() {
         </div>
       </section>
       <section className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
-        <div className="bg-marrom p-8 rounded-lg shadow-lg w-1/2 shadow-black">
-          <h1 className="text-2xl font-bold text-black mb-2">
-            Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
-          </h1>
-          <p className=" mb-4 text-lg">
-            Uma avaliação personalizada é o primeiro passo para alcançar seus
-            objetivos de saúde e bem-estar. Nós vamos entender suas necessidades
-            e oferecer as melhores opções para você, garantindo cuidados
-            exclusivos e resultados eficazes. Venha para a nossa clínica e
-            cuide-se com quem entende de você!
-          </p>
-
-          <form className="space-y-4">
-            <div className="flex space-x-2">
-              <input
-                type="text"
-                placeholder="Nome"
-                className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
-              />
-              <input
-                type="tel"
-                placeholder="Telefone"
-                className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
-              />
-            </div>
-
+      <div className="bg-marrom p-8 rounded-lg shadow-lg w-1/2 shadow-black">
+        <h1 className="text-2xl font-bold text-black mb-2">
+          Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
+        </h1>
+        <p className="mb-4 text-lg">
+          Uma avaliação personalizada é o primeiro passo para alcançar seus objetivos de saúde e bem-estar. Nós vamos
+          entender suas necessidades e oferecer as melhores opções para você, garantindo cuidados exclusivos e
+          resultados eficazes. Venha para a nossa clínica e cuide-se com quem entende de você!
+        </p>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex space-x-2">
             <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+              type="text"
+              name="name"
+              placeholder="Nome"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+              required
             />
-
-            <textarea
-              placeholder="Digite sua mensagem..."
-              className="w-full p-2 h-32 border border-nude bg-transparent rounded-md placeholder-gray-400 resize-none"
-            ></textarea>
-
-            <button className="w-full bg-gradient-to-r from-nude to-purple-500 font-bold py-2 rounded-md hover:scale-95 transition-transform duration-200">
-              Enviar
-            </button>
-          </form>
-        </div>
-      </section>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Telefone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+              required
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Digite sua mensagem..."
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-2 h-32 border border-nude bg-transparent rounded-md placeholder-gray-400 resize-none"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-nude to-purple-500 font-bold py-2 rounded-md hover:scale-95 transition-transform duration-200"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </section>
       <section className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black ">
         <div className="flex bg-marrom w-full rounded-t-[5vw] h-full justify-around items-center p-10">
           <div className="flex flex-col text-start w-1/3 gap-2">
