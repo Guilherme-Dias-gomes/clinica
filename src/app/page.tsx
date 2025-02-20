@@ -51,8 +51,8 @@ export default function Home() {
           </ul>
         </nav>
       </header>
-      <section className="flex h-screen justify-evenly items-center">
-        <div className="flex w-1/2 flex-col gap-4">
+      <section className="flex h-full justify-around items-center">
+        <div className="flex w-1/2 flex-col gap-10">
           <h1 className="text-6xl ">
             Realce sua beleza natural e aumente sua autoestima com um cuidado
             completo da pele
@@ -65,16 +65,20 @@ export default function Home() {
           </a>
         </div>
         <div>
-          <img src="perfil.png" alt="" />
+          <img src="teste2.png" alt="" />
         </div>
       </section>
-      <section className="flex flex-col h-screen bg-marrom items-center justify-around">
+      <section className="flex flex-col h-full bg-marrom items-center justify-around py-5">
         <h1 className="font-bold text-4xl">Procedimentos</h1>
-        <div className="flex justify-around w-full">
-          <Card content="Este é meu teste de components" bg="estetica.jpg" />
-          <Card content="Este é meu teste de components" bg="estetica.jpg" />
-          <Card content="Este é meu teste de components" bg="estetica.jpg" />
-          <Card content="Este é meu teste de components" bg="estetica.jpg" />
+        <div className="flex justify-around w-full flex-wrap gap-10 p-5">
+          <Card content="Botox" bg="botox.jpg" />
+          <Card content="Preenchimento com Ácido hialurônico" bg="preenchimento.jpg" />
+          <Card content="Fio de PDO" bg="pdo.jpg" />
+          <Card content="Bioestimulador de Colageno" bg="bioestimulador.jpg" />
+          <Card content="Limpeza de Pele" bg="limpeza.jpg" />
+          <Card content="Peeling Quimico" bg="peeling.jpg" />
+          <Card content="Intradermeterapia" bg="intra.png" />
+          <Card content="Skinbooster" bg="skinbooster.jpg" />
         </div>
         <a
           href="https://wa.me/5511952279968"
@@ -85,7 +89,7 @@ export default function Home() {
       </section>
       <section className="flex h-screen items-center justify-around">
         <div className="flex items-center w-4/5 h-full p-10 text-center">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/estetica.jpg')] bg-cover bg-center rounded-3xl p-10"></div>
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center rounded-3xl p-10"></div>
           <div className="flex flex-col h-1/2 p-6  gap-4 w-1/2">
             <h1 className="font-bold text-4xl">
               Venha conhecer a Dra. Rosiane Gomes
@@ -144,7 +148,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center w-4/5 h-full p-10  ">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/estetica.jpg')] bg-cover bg-center bg-gray-400 rounded-3xl"></div>
+          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-centerounded-3xl"></div>
         </div>
       </section>
       <section className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
