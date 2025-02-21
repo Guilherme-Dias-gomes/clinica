@@ -66,7 +66,7 @@ export default function Home() {
           scrolled ? "bg-marrom shadow-md" : "bg-transparent text-black"
         }`}
       >
-        <div className="w-24 h-16 sm:w-32 sm:h-20 md:w-48 md:h-32 lg:w-64 lg:h-48">
+        <div className="w-24 h-16 sm:w-32 sm:h-20 md:w-48 md:h-32 lg:w-48">
           <img
             src="teste5.0.png"
             alt="logo"
@@ -120,7 +120,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="flex flex-col md:flex-row h-screen justify-center md:justify-around items-center p-4">
+      <section id="Inicio" className="flex flex-col md:flex-row h-screen justify-center md:justify-around items-center p-4">
         {/* Texto e botão */}
         <div className="flex w-full md:w-1/2 flex-col gap-10 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl">
@@ -144,7 +144,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex flex-col h-full bg-marrom items-center justify-around py-5">
+      <section id="Procedimentos" className="flex flex-col h-full bg-marrom items-center justify-around py-5">
         <h1 className="font-bold text-3xl lg:text-4xl">Procedimentos</h1>
         <div className="flex justify-around w-full flex-wrap gap-10 p-5">
           <Card content="Botox" bg="botox.jpg" />
@@ -166,7 +166,7 @@ export default function Home() {
           AGENDAR CONSULTA
         </a>
       </section>
-      <section className="flex h-screen items-center justify-around ">
+      <section id="Sobre" className="flex h-screen items-center justify-around ">
         <div className="flex items-center w-4/5 h-full text-center">
           <div className="w-full w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center"></div>
           <div className="flex flex-col h-1/2 p-6 gap-4 w-1/2">
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex h-screen just bg-marrom items-center">
+      <section  className="flex h-screen just bg-marrom items-center">
         <div className="flex flex-col gap-10 w-4/5 p-10">
           <h1 className="text-5xl">Dra. Rosiane Gomes</h1>
           <div className="flex items-center gap-4 text-xl border-b border-black p-2">
@@ -230,7 +230,7 @@ export default function Home() {
           <div className="w-full lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center bg-centerounded-3xl"></div>
         </div>
       </section>
-      <section className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
+      <section id="Agendar" className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
         <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 shadow-black">
           <h1 className="text-2xl font-bold text-black mb-2">
             Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
@@ -289,7 +289,7 @@ export default function Home() {
           </form>
         </div>
       </section>
-      <section className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black ">
+      <section id="Contato" className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black ">
         <div className="flex bg-marrom w-full rounded-t-[5vw] h-full justify-around items-center p-10">
           <div className="flex flex-col text-start w-full lg:w-1/3 gap-2">
             <h1 className="text-4xl font-semibold">Hora de se cuidar!</h1>
