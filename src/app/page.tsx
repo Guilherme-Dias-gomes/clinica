@@ -8,14 +8,20 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
@@ -24,22 +30,22 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const response = await fetch('api/sendEmail', {
-        method: 'POST',
+      const response = await fetch("api/sendEmail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert('E-mail enviado com sucesso!');
+        alert("E-mail enviado com sucesso!");
       } else {
-        alert('Erro ao enviar o e-mail.');
+        alert("Erro ao enviar o e-mail.");
       }
     } catch (error) {
       console.error(error);
-      alert('Erro ao enviar o e-mail.');
+      alert("Erro ao enviar o e-mail.");
     }
   };
 
@@ -53,20 +59,47 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="p-0 bg-[url('/background.svg')] bg-cover bg-center font-cinzel">
+    <div className="w-full p-0 bg-[url('/background.svg')] bg-cover bg-center font-cinzel">
       <header
         id="navbar"
-        className={`sticky top-0 flex flex-row justify-around items-center p-2 z-10 font-sans transition-all duration-300 ${
+        className={`sticky top-0 w-full flex flex-row justify-around items-center p-2 z-10 font-sans transition-all duration-300 ${
           scrolled ? "bg-marrom shadow-md" : "bg-transparent text-black"
         }`}
       >
-        <div className="w-48 h-1/2">
-          <img src="teste5.0.png" alt="logo" />
+        <div className="w-24 h-16 sm:w-32 sm:h-20 md:w-48 md:h-32 lg:w-64 lg:h-48">
+          <img
+            src="teste5.0.png"
+            alt="logo"
+            className="w-full h-full object-contain"
+          />
         </div>
+
+        <button
+          onClick={toggleMenu}
+          className={`lg:hidden p-2 rounded-md focus:outline-none ${
+            isMenuOpen ? "bg-black text-white" : "bg-transparent text-black"
+          }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
         <nav
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } lg:block lg:relative absolute top-full left-0 w-full bg-stone-800 lg:bg-transparent lg:w-auto lg:top-0`}
+          } lg:block absolute top-full left-0 w-full bg-stone-800 lg:bg-transparent lg:w-auto lg:relative`}
         >
           <ul className="flex flex-col lg:flex-row gap-8 text-xl font-bold p-5 lg:p-0">
             {["Inicio", "Procedimentos", "Sobre", "Agendar", "Contato"].map(
@@ -75,8 +108,8 @@ export default function Home() {
                   <a
                     href={`#${item}`}
                     className="block py-2 lg:py-0 relative transition duration-300 hover:text-black
-                   before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
-                   before:bg-black before:transition-all before:duration-300 hover:before:w-full"
+           before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
+           before:bg-black before:transition-all before:duration-300 hover:before:w-full"
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </a>
@@ -86,25 +119,33 @@ export default function Home() {
           </ul>
         </nav>
       </header>
-      <section className="flex h-full justify-around items-center">
-        <div className="flex w-1/2 flex-col gap-10">
-          <h1 className="text-6xl ">
+
+      <section className="flex flex-col md:flex-row h-screen justify-center md:justify-around items-center p-4">
+        {/* Texto e botão */}
+        <div className="flex w-full md:w-1/2 flex-col gap-10 text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl">
             Realce sua beleza natural e aumente sua autoestima com um cuidado
             completo da pele
           </h1>
           <a
             href="https://wa.me/5511952279968"
-            className="ml-14 p-4 w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
+            className="p-4 w-full md:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200 mx-auto md:mx-0"
           >
             AGENDAR CONSULTA
           </a>
         </div>
-        <div>
-          <img src="teste2.png" alt="" />
+
+        {/* Imagem */}
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <img
+            src="teste2.png"
+            alt=""
+            className="w-3/4 sm:w-1/2 md:w-full h-auto max-w-lg"
+          />
         </div>
       </section>
       <section className="flex flex-col h-full bg-marrom items-center justify-around py-5">
-        <h1 className="font-bold text-4xl">Procedimentos</h1>
+        <h1 className="font-bold text-3xl lg:text-4xl">Procedimentos</h1>
         <div className="flex justify-around w-full flex-wrap gap-10 p-5">
           <Card content="Botox" bg="botox.jpg" />
           <Card
@@ -120,14 +161,14 @@ export default function Home() {
         </div>
         <a
           href="https://wa.me/5511952279968"
-          className="ml-14 p-4 w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200 "
+          className="ml-14 p-4 w-full lg:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
         >
           AGENDAR CONSULTA
         </a>
       </section>
       <section className="flex h-screen items-center justify-around ">
         <div className="flex items-center w-4/5 h-full text-center">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center"></div>
+          <div className="w-full w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center"></div>
           <div className="flex flex-col h-1/2 p-6 gap-4 w-1/2">
             <h1 className="font-bold text-4xl">
               Venha conhecer a Dra. Rosiane Gomes
@@ -186,69 +227,71 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center w-4/5 h-full">
-          <div className="w-full max-w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center bg-centerounded-3xl"></div>
+          <div className="w-full lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center bg-centerounded-3xl"></div>
         </div>
       </section>
       <section className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
-      <div className="bg-marrom p-8 rounded-lg shadow-lg w-1/2 shadow-black">
-        <h1 className="text-2xl font-bold text-black mb-2">
-          Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
-        </h1>
-        <p className="mb-4 text-lg">
-          Uma avaliação personalizada é o primeiro passo para alcançar seus objetivos de saúde e bem-estar. Nós vamos
-          entender suas necessidades e oferecer as melhores opções para você, garantindo cuidados exclusivos e
-          resultados eficazes. Venha para a nossa clínica e cuide-se com quem entende de você!
-        </p>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex space-x-2">
+        <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 shadow-black">
+          <h1 className="text-2xl font-bold text-black mb-2">
+            Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
+          </h1>
+          <p className="mb-4 text-lg">
+            Uma avaliação personalizada é o primeiro passo para alcançar seus
+            objetivos de saúde e bem-estar. Nós vamos entender suas necessidades
+            e oferecer as melhores opções para você, garantindo cuidados
+            exclusivos e resultados eficazes. Venha para a nossa clínica e
+            cuide-se com quem entende de você!
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col lg:flex-row lg:space-x-2">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nome"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full lg:w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Telefone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full lg:w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+                required
+              />
+            </div>
             <input
-              type="text"
-              name="name"
-              placeholder="Nome"
-              value={formData.name}
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+              className="w-full p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
               required
             />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Telefone"
-              value={formData.phone}
+            <textarea
+              name="message"
+              placeholder="Digite sua mensagem..."
+              value={formData.message}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
+              className="w-full p-2 h-32 border border-nude bg-transparent rounded-md placeholder-gray-400 resize-none"
               required
-            />
-          </div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-2 border border-nude bg-transparent rounded-md placeholder-gray-400"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Digite sua mensagem..."
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full p-2 h-32 border border-nude bg-transparent rounded-md placeholder-gray-400 resize-none"
-            required
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-nude to-purple-500 font-bold py-2 rounded-md hover:scale-95 transition-transform duration-200"
-          >
-            Enviar
-          </button>
-        </form>
-      </div>
-    </section>
+            ></textarea>
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-nude to-purple-500 font-bold py-2 rounded-md hover:scale-95 transition-transform duration-200"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+      </section>
       <section className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black ">
         <div className="flex bg-marrom w-full rounded-t-[5vw] h-full justify-around items-center p-10">
-          <div className="flex flex-col text-start w-1/3 gap-2">
+          <div className="flex flex-col text-start w-full lg:w-1/3 gap-2">
             <h1 className="text-4xl font-semibold">Hora de se cuidar!</h1>
             <p className="text-xl">
               Cuide da sua beleza, saúde e autoestima! Agende uma consulta pelo
@@ -290,7 +333,7 @@ export default function Home() {
               <a
                 key={index}
                 href={contact.href}
-                className="flex items-center group w-full sm:w-auto"
+                className="flex items-center group w-full"
               >
                 <div className="relative">
                   <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -313,7 +356,7 @@ export default function Home() {
             href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
             className="mr-2"
           >
-            Guilherme Dias 
+            Guilherme Dias
           </a>
           <p>– Copyright 2025. Todos os direitos reservados.</p>
         </span>
