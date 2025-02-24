@@ -147,7 +147,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex flex-col h-full bg-marrom items-center justify-around py-5">
+      <section id="Procedimentos" className="flex flex-col h-full bg-marrom items-center justify-around py-5">
         <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
           <Card content="Botox" bg="botox.jpg" />
