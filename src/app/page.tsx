@@ -99,7 +99,7 @@ export default function Home() {
         <nav
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } lg:block absolute top-full left-0 w-full bg-stone-800 lg:bg-transparent lg:w-auto lg:relative`}
+          } lg:block absolute top-full left-0 w-full bg-nude lg:bg-transparent lg:w-auto lg:relative`}
         >
           <ul className="flex flex-col lg:flex-row gap-8 text-xl font-bold p-5 lg:p-0">
             {["Inicio", "Procedimentos", "Sobre", "Agendar", "Contato"].map(
@@ -108,8 +108,8 @@ export default function Home() {
                   <a
                     href={`#${item}`}
                     className="block py-2 lg:py-0 relative transition duration-300 hover:text-black
-           before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
-           before:bg-black before:transition-all before:duration-300 hover:before:w-full"
+                 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
+                 before:bg-black before:transition-all before:duration-300 hover:before:w-full"
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </a>
@@ -120,7 +120,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <section id="Inicio" className="flex flex-col md:flex-row h-screen justify-center md:justify-around items-center p-4">
+      <section
+        id="Inicio"
+        className="flex flex-col md:flex-row h-full justify-around items-center max-w-6xl mx-auto"
+      >
         {/* Texto e botão */}
         <div className="flex w-full md:w-1/2 flex-col gap-10 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl">
@@ -129,7 +132,7 @@ export default function Home() {
           </h1>
           <a
             href="https://wa.me/5511952279968"
-            className="p-4 w-full md:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200 mx-auto md:mx-0"
+            className="p-4 md:w-1/2 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200 mx-auto md:mx-0"
           >
             AGENDAR CONSULTA
           </a>
@@ -144,9 +147,9 @@ export default function Home() {
           />
         </div>
       </section>
-      <section id="Procedimentos" className="flex flex-col h-full bg-marrom items-center justify-around py-5">
-        <h1 className="font-bold text-3xl lg:text-4xl">Procedimentos</h1>
-        <div className="flex justify-around w-full flex-wrap gap-10 p-5">
+      <section className="flex flex-col h-full bg-marrom items-center justify-around py-5">
+        <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
           <Card content="Botox" bg="botox.jpg" />
           <Card
             content="Preenchimento com Ácido hialurônico"
@@ -161,19 +164,26 @@ export default function Home() {
         </div>
         <a
           href="https://wa.me/5511952279968"
-          className="ml-14 p-4 w-full lg:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
+          className="mt-8 p-4 md:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
         >
           AGENDAR CONSULTA
         </a>
       </section>
-      <section id="Sobre" className="flex h-screen items-center justify-around ">
-        <div className="flex items-center w-4/5 h-full text-center">
-          <div className="w-full w-lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center"></div>
-          <div className="flex flex-col h-1/2 p-6 gap-4 w-1/2">
-            <h1 className="font-bold text-4xl">
+      <section
+        id="Sobre"
+        className="flex flex-col md:flex-row h-full items-center justify-center md:justify-around "
+      >
+        {/* Conteúdo à esquerda (imagem e texto) */}
+        <div className="flex flex-col md:flex-row items-center w-full md:w-4/5 h-full text-center md:text-left">
+          {/* Imagem */}
+          <div className="w-full md:w-1/2 h-64 md:h-full bg-[url('/teste2.png')] bg-cover rounded-lg mb-4 md:mb-0"></div>
+
+          {/* Texto e botão */}
+          <div className="flex flex-col justify-center h-1/2 p-6 gap-4 w-full md:w-1/2">
+            <h1 className="font-bold text-3xl md:text-4xl">
               Venha conhecer a Dra. Rosiane Gomes
             </h1>
-            <p className=" text-2xl">
+            <p className="text-xl md:text-2xl">
               Um espaço cuidadosamente projetado para proporcionar uma
               experiência aconchegante, focada no autocuidado e no bem-estar
             </p>
@@ -187,50 +197,52 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-1/3">
-          <div className="w-56 ">
-            <img src="teste5.0.png" alt="logo" />
+
+        {/* Logo à direita */}
+        <div className="hidden md:flex items-center justify-center">
+          <div className="w-40 md:w-56">
+            <img src="teste5.0.png" alt="logo" className="w-full h-auto" />
           </div>
         </div>
       </section>
-      <section  className="flex h-screen just bg-marrom items-center">
-        <div className="flex flex-col gap-10 w-4/5 p-10">
-          <h1 className="text-5xl">Dra. Rosiane Gomes</h1>
-          <div className="flex items-center gap-4 text-xl border-b border-black p-2">
-            <img src="correto.png" alt="correto" className="w-10" />
+      <section className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around">
+        {/* Conteúdo à esquerda (texto) */}
+        <div className="flex flex-col gap-6 w-full md:w-4/5 p-4 md:p-10">
+          <h1 className="text-3xl md:text-5xl text-center md:text-left">
+            Dra. Rosiane Gomes
+          </h1>
+          <div className="flex items-center gap-4 text-lg md:text-xl border-b border-black p-2">
+            <img src="correto.png" alt="correto" className="w-8 md:w-10" />
             <p>
               Enfermeira graduada pela Centro Universitario Italo Brasileiro, em
               São Paulo - SP.
             </p>
           </div>
-          <div className="flex items-center gap-4 text-xl border-b border-black p-2">
-            <img src="correto.png" alt="correto" className="w-10" />
+          <div className="flex items-center gap-4 text-lg md:text-xl border-b border-black p-2">
+            <img src="correto.png" alt="correto" className="w-8 md:w-10" />
             <p>
               Possui especialização em Enfermagem Estética pelo Instituto de
               Pesquisa e Educação em Saúde de São Paulo (IPESSP).
             </p>
           </div>
-          <div className="flex items-center gap-4 text-xl border-b border-black p-2">
-            <img src="correto.png" alt="correto" className="w-10" />
+          <div className="flex items-center gap-4 text-lg md:text-xl border-b border-black p-2">
+            <img src="correto.png" alt="correto" className="w-8 md:w-10" />
             <p>
               Especialista em Cuidados com a Saúde e o Bem-Estar do Paciente,
               com pós-graduação em Urgência e Emergência pela instituição FMU.
             </p>
           </div>
-          <div className="flex justify-center">
-            <a
-              href="https://wa.me/5511952279968"
-              className="p-4 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
-            >
-              DESCUBRA SUA MELHOR VERSÃO
-            </a>
-          </div>
         </div>
-        <div className="flex items-center w-4/5 h-full">
-          <div className="w-full lg h-full max-h-full bg-[url('/teste2.png')] bg-cover bg-center bg-centerounded-3xl"></div>
+
+        {/* Imagem à direita */}
+        <div className="hidden md:flex items-center justify-center w-full md:w-4/5 h-full">
+          <div className="w-full h-full bg-[url('/teste2.png')] bg-cover bg-center rounded-3xl"></div>
         </div>
       </section>
-      <section id="Agendar" className="flex h-screen w-full items-center text-center justify-center mt-5 text-black">
+      <section
+        id="Agendar"
+        className="flex h-full w-full items-center text-center justify-center mt-5 text-black"
+      >
         <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 shadow-black">
           <h1 className="text-2xl font-bold text-black mb-2">
             Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
@@ -243,7 +255,7 @@ export default function Home() {
             cuide-se com quem entende de você!
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col lg:flex-row lg:space-x-2">
+            <div className="flex flex-col lg:flex-row lg:space-x-2 gap-4">
               <input
                 type="text"
                 name="name"
@@ -289,27 +301,35 @@ export default function Home() {
           </form>
         </div>
       </section>
-      <section id="Contato" className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black ">
-        <div className="flex bg-marrom w-full rounded-t-[5vw] h-full justify-around items-center p-10">
-          <div className="flex flex-col text-start w-full lg:w-1/3 gap-2">
-            <h1 className="text-4xl font-semibold">Hora de se cuidar!</h1>
-            <p className="text-xl">
+      <section
+        id="Contato"
+        className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black"
+      >
+        {/* Parte superior (Texto e botão) */}
+        <div className="flex flex-col md:flex-row bg-marrom w-full rounded-t-[5vw] h-full justify-around items-center p-6 md:p-10">
+          <div className="flex flex-col text-center md:text-start w-full md:w-1/3 gap-2 mb-6 md:mb-0">
+            <h1 className="text-2xl md:text-4xl font-semibold">
+              Hora de se cuidar!
+            </h1>
+            <p className="text-lg md:text-xl">
               Cuide da sua beleza, saúde e autoestima! Agende uma consulta pelo
               Whatsapp
             </p>
           </div>
-          <div className="hover:scale-90 transition-transform duration-200 ">
+          <div className="hover:scale-90 transition-transform duration-200">
             <a
               href="https://wa.me/5511952279968"
-              className="p-4 font-bold rounded-full text-center bg-nude"
+              className="p-3 md:p-4 font-bold rounded-full text-center bg-nude text-sm md:text-base"
             >
               MARCAR CONSULTA
             </a>
           </div>
         </div>
+
+        {/* Parte do meio (Localização e contatos) */}
         <div className="w-full bg-[url('/background.svg')] bg-cover bg-center">
           <Location />
-          <div className="flex flex-col sm:flex-row sm:gap-10 justify-around text-start p-10 ">
+          <div className="flex flex-col sm:flex-row sm:gap-6 justify-around text-start p-6 md:p-10">
             {[
               {
                 href: "mailto:guilhermediasgomes2@gmail.com",
@@ -333,25 +353,34 @@ export default function Home() {
               <a
                 key={index}
                 href={contact.href}
-                className="flex items-center group w-full"
+                className="flex items-center group w-full mb-4 sm:mb-0 gap-4"
               >
-                <div className="relative">
+                <div className="relative min-w-[40px] min-h-[40px]">
+                  {" "}
+                  {/* Defina um tamanho mínimo para o ícone */}
                   <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
                     src={contact.icon}
                     alt={contact.label}
-                    className="w-14 mr-2 relative"
+                    className="w-10 md:w-14 mr-2 relative"
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold">{contact.label}</h3>
-                  <p>{contact.name}</p>
+                  <h3 className="font-bold text-sm md:text-base">
+                    {contact.label}
+                  </h3>
+                  <p className="text-sm md:text-base break-words">
+                    {contact.name}
+                  </p>{" "}
+                  {/* Mantive o break-words */}
                 </div>
               </a>
             ))}
           </div>
         </div>
-        <span className="font-bold text-center items-center flex">
+
+        {/* Rodapé (Copyright) */}
+        <span className="font-bold text-center items-center flex p-4 text-sm md:text-base">
           <a
             href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
             className="mr-2"
