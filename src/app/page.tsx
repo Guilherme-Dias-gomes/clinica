@@ -177,9 +177,11 @@ export default function Home() {
         className="flex flex-col md:flex-row h-full items-center justify-center md:justify-around "
       >
         {/* Conteúdo à esquerda (imagem e texto) */}
-        <div className="flex flex-col md:flex-row items-center w-full md:w-4/5 h-full text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-around w-full md:w-4/5 h-full text-center md:text-left">
           {/* Imagem */}
-          <div className="w-full md:w-1/2 h-64 md:h-full bg-[url('/teste2.png')] bg-cover rounded-lg mb-4 md:mb-0"></div>
+          <div className="w-full md:w-1/2 h-full rounded-lg ">
+            <img src="teste2.png" alt="doutora" />
+          </div>
 
           {/* Texto e botão */}
           <div className="flex flex-col justify-center h-1/2 p-6 gap-4 w-full md:w-1/2">
@@ -239,7 +241,7 @@ export default function Home() {
 
         {/* Imagem à direita */}
         <div className="hidden md:flex items-center justify-center w-full md:w-4/5 h-full">
-          <div className="w-full h-full bg-[url('/teste2.png')] bg-cover bg-center rounded-3xl"></div>
+          <div className="w-full h-full rounded-3xl"><img src="teste2.png" alt="" /></div>
         </div>
       </section>
       <section
