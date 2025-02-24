@@ -147,7 +147,10 @@ export default function Home() {
           />
         </div>
       </section>
-      <section id="Procedimentos" className="flex flex-col h-full bg-marrom items-center justify-around py-5">
+      <section
+        id="Procedimentos"
+        className="flex flex-col h-full bg-marrom items-center justify-around py-5"
+      >
         <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
           <Card content="Botox" bg="botox.jpg" />
@@ -380,10 +383,10 @@ export default function Home() {
         </div>
 
         {/* Rodapé (Copyright) */}
-        <span className="font-bold text-center items-center flex p-4 text-sm md:text-base">
+        <span className="font-bold w-full text-center flex flex-col items-center text-sm md:text-base p-4">
           <a
             href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
-            className="mr-2"
+            className="mb-2 md:mb-0 md:mr-2"
           >
             Guilherme Dias
           </a>
