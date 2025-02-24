@@ -186,7 +186,7 @@ export default function Home() {
           {/* Texto e botão */}
           <div className="flex flex-col justify-center h-1/2 p-6 gap-4 w-full md:w-1/2">
             <h1 className="font-bold text-3xl md:text-4xl">
-              Venha conhecer a Dra. Rosiane Gomes
+              Venha conhecer o espaço de Estetica Avançada Dra. Rosiane Gomes
             </h1>
             <p className="text-xl md:text-2xl">
               Um espaço cuidadosamente projetado para proporcionar uma
@@ -241,14 +241,16 @@ export default function Home() {
 
         {/* Imagem à direita */}
         <div className="hidden md:flex items-center justify-center w-full md:w-4/5 h-full">
-          <div className="w-full h-full rounded-3xl"><img src="teste2.png" alt="" /></div>
+          <div className="w-full h-full rounded-3xl">
+            <img src="teste2.png" alt="" />
+          </div>
         </div>
       </section>
       <section
         id="Agendar"
         className="flex h-full w-full items-center text-center justify-center mt-5 text-black"
       >
-        <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 shadow-black">
+        <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 mt-5 shadow-black">
           <h1 className="text-2xl font-bold text-black mb-2">
             Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
           </h1>
@@ -259,7 +261,7 @@ export default function Home() {
             exclusivos e resultados eficazes. Venha para a nossa clínica e
             cuide-se com quem entende de você!
           </p>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 ">
             <div className="flex flex-col lg:flex-row lg:space-x-2 gap-4">
               <input
                 type="text"
@@ -332,9 +334,16 @@ export default function Home() {
         </div>
 
         {/* Parte do meio (Localização e contatos) */}
-        <div className="w-full bg-[url('/background.svg')] bg-cover bg-center">
-          <Location />
-          <div className="flex flex-col sm:flex-row sm:gap-6 justify-around text-start p-6 md:p-10">
+        <div className="flex flex-col justify-around items-center w-full bg-[url('/background.svg')] bg-cover bg-center border-2 p-4">
+          {/* Mapa */}
+          <div className="w-full max-w-6xl h-[400px] md:h-[500px] mb-8">
+            {" "}
+            {/* Aumentei a altura do mapa */}
+            <Location />
+          </div>
+
+          {/* Contatos */}
+          <div className="flex flex-col sm:flex-row sm:gap-6 justify-center text-start w-full max-w-4xl p-6 md:p-10">
             {[
               {
                 href: "mailto:guilhermediasgomes2@gmail.com",
@@ -358,11 +367,9 @@ export default function Home() {
               <a
                 key={index}
                 href={contact.href}
-                className="flex items-center group w-full mb-4 sm:mb-0 gap-4"
+                className="flex items-center group w-full sm:w-auto mb-4 sm:mb-0 gap-4"
               >
-                <div className="relative min-w-[40px] min-h-[40px]">
-                  {" "}
-                  {/* Defina um tamanho mínimo para o ícone */}
+                <div className="relative min-w-[40px] min-h-[45px]">
                   <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
                     src={contact.icon}
@@ -376,8 +383,7 @@ export default function Home() {
                   </h3>
                   <p className="text-sm md:text-base break-words">
                     {contact.name}
-                  </p>{" "}
-                  {/* Mantive o break-words */}
+                  </p>
                 </div>
               </a>
             ))}

@@ -1,7 +1,7 @@
 export default function Location() {
     return (
-      <section className="flex justify-center items-center p-6">
-        <div className="w-full max-w-2xl ">
+      <section className="flex  justify-center items-center">
+        <div className="w-full h-full max-w-2xl ">
           <h2 className="text-2xl font-bold text-center mb-4">Nossa Localização</h2>
           <div className="w-full h-96 rounded-xl overflow-hidden shadow-lg shadow-black">
             <iframe
