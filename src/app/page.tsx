@@ -4,9 +4,19 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Location from "./components/Location";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Importe o CSS
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duração da animação
+      once: true, // Anima apenas uma vez
+    });
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -121,6 +131,7 @@ export default function Home() {
       </header>
 
       <section
+        data-aos="fade-up"
         id="Inicio"
         className="flex flex-col md:flex-row h-full justify-around items-center max-w-6xl mx-auto"
       >
@@ -148,6 +159,7 @@ export default function Home() {
         </div>
       </section>
       <section
+        data-aos="fade-up"
         id="Procedimentos"
         className="flex flex-col h-full bg-marrom items-center justify-around py-5"
       >
@@ -173,6 +185,7 @@ export default function Home() {
         </a>
       </section>
       <section
+        data-aos="fade-up"
         id="Sobre"
         className="flex flex-col md:flex-row h-full items-center justify-center md:justify-around "
       >
@@ -210,7 +223,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around">
+      <section data-aos="fade-up" className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around">
         {/* Conteúdo à esquerda (texto) */}
         <div className="flex flex-col gap-6 w-full md:w-4/5 p-4 md:p-10">
           <h1 className="text-3xl md:text-5xl text-center md:text-left">
@@ -247,6 +260,7 @@ export default function Home() {
         </div>
       </section>
       <section
+        data-aos="fade-up"
         id="Agendar"
         className="flex h-full w-full items-center text-center justify-center mt-5 text-black"
       >
@@ -309,6 +323,7 @@ export default function Home() {
         </div>
       </section>
       <section
+        data-aos="fade-up"
         id="Contato"
         className="flex flex-col h-full w-full items-center text-center justify-center bg-marrom rounded-t-[5vw] mt-20 text-black shadow-2xl shadow-black"
       >
