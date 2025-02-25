@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Location from "./components/Location";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Importe o CSS
+import AOS from "aos";
+import "aos/dist/aos.css"; // Importe o CSS
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -165,7 +165,11 @@ export default function Home() {
       >
         <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
-          <Card content="Botox" bg="botox.jpg" />
+          <Card
+            content="Botox"
+            bg="/botox.jpg"
+            details="O Botox é um procedimento estético que reduz rugas e linhas de expressão. É aplicado por meio de injeções diretamente nos músculos faciais, relaxando-os e suavizando as rugas. O efeito dura de 4 a 6 meses."
+          />
           <Card
             content="Preenchimento com Ácido hialurônico"
             bg="preenchimento.jpg"
@@ -223,7 +227,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section data-aos="fade-up" className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around">
+      <section
+        data-aos="fade-up"
+        className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around"
+      >
         {/* Conteúdo à esquerda (texto) */}
         <div className="flex flex-col gap-6 w-full md:w-4/5 p-4 md:p-10">
           <h1 className="text-3xl md:text-5xl text-center md:text-left">
@@ -349,7 +356,7 @@ export default function Home() {
         </div>
 
         {/* Parte do meio (Localização e contatos) */}
-        <div className="flex flex-col justify-around items-center w-full bg-[url('/background.svg')] bg-cover bg-center border-2 p-4">
+        <div className="flex flex-col justify-around items-center w-full bg-[url('/background.svg')] bg-cover bg-center p-4">
           {/* Mapa */}
           <div className="w-full max-w-6xl h-[400px] md:h-[500px] mb-8">
             {" "}
