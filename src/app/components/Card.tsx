@@ -11,7 +11,7 @@ export default function Card({ content, bg, details }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="card-container w-full h-64 sm:h-72 md:h-80 cursor-pointer font-bold" onClick={() => setIsFlipped(!isFlipped)}>
+    <div className="card-container w-full h-64 sm:h-72 md:h-80 cursor-pointer font-bold " onClick={() => setIsFlipped(!isFlipped)}>
       {/* Card que gira */}
       <div className={`card ${isFlipped ? "flipped" : ""}`}>
         {/* Frente do Card */}
@@ -26,7 +26,7 @@ export default function Card({ content, bg, details }: CardProps) {
 
         {/* Verso do Card */}
         <div className="card-face card-back">
-          <p className="text-gray-700 text-center">{details}</p>
+          <p className="flex text-gray-700 text-center p-2 border-2 h-full items-center">{details}</p>
         </div>
       </div>
     </div>

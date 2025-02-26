@@ -169,12 +169,12 @@ export default function Home() {
           <Card
             content="Toxina Botulínica"
             bg="/botox.jpg"
-            details="Ea substância bloqueia temporariamente a liberação da acetilcolina, neurotransmissor responsável pela contração muscular. isso impede a movimentação excessiva dos músculos, prevenindo e reduzindo rugas dinâmicas, aquelas formadas pela repetição de expressões faciais."
+            details="A substância bloqueia temporariamente a liberação da acetilcolina, neurotransmissor responsável pela contração muscular. isso impede a movimentação excessiva dos músculos, prevenindo e reduzindo rugas dinâmicas, aquelas formadas pela repetição de expressões faciais."
           />
           <Card
             content="Preenchimento com Ácido hialurônico"
             bg="preenchimento.jpg"
-            details="o ácido hialurônico, uma substância naturalmente presente no organismo, é aplicado em áreas específicas do rosto para preencher sulcos, rugas e restaurar o volume perdido com o envelhecimento. além disso, o tratamento melhora a hidratação da pele e estimula a produção de colágeno."
+            details="O ácido hialurônico, uma substância naturalmente presente no organismo, é aplicado em áreas específicas do rosto para preencher sulcos, rugas e restaurar o volume perdido com o envelhecimento. além disso, o tratamento melhora a hidratação da pele e estimula a produção de colágeno."
           />
           <Card
             content="Fio de PDO"
