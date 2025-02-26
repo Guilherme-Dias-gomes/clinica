@@ -168,18 +168,43 @@ export default function Home() {
           <Card
             content="Botox"
             bg="/botox.jpg"
-            details="O Botox é um procedimento estético que reduz rugas e linhas de expressão. É aplicado por meio de injeções diretamente nos músculos faciais, relaxando-os e suavizando as rugas. O efeito dura de 4 a 6 meses."
+            details="Essa substância promove um bloqueio neuropático, ou seja, impede a liberação da acetilcolina (substância responsável por conduzir o estímulo do nervo para o músculo). Dessa forma, a contração muscular que causa rugas não ocorre."
           />
           <Card
             content="Preenchimento com Ácido hialurônico"
             bg="preenchimento.jpg"
+            details="Essa substância atua bloqueando a liberação da acetilcolina, neurotransmissor responsável pela comunicação entre o nervo e o músculo. Com isso, a contração muscular é reduzida, prevenindo e suavizando rugas, promovendo uma aparência mais jovem e harmoniosa."
           />
-          <Card content="Fio de PDO" bg="pdo.jpg" />
-          <Card content="Bioestimulador de Colageno" bg="bioestimulador.jpg" />
-          <Card content="Limpeza de Pele" bg="limpeza.jpg" />
-          <Card content="Peeling Quimico" bg="peeling.jpg" />
-          <Card content="Intradermeterapia" bg="intra.png" />
-          <Card content="Skinbooster" bg="skinbooster.jpg" />
+          <Card
+            content="Fio de PDO"
+            bg="pdo.jpg"
+            details="Fios de PDO, ou fios de sustentação, são absorvíveis e desenvolvidos para promover a sustentação da pele. são utilizados em técnicas de lifting facial para elevar e firmar a pele, realçando o contorno do rosto."
+          />
+          <Card
+            content="Bioestimulador de Colageno"
+            bg="bioestimulador.jpg"
+            details="O Bioestimulador de colágeno é um procedimento estético que visa estimular a produção natural de colágeno pelo organismo, promovendo firmeza, elasticidade e rejuvenescimento da pele."
+          />
+          <Card
+            content="Limpeza de Pele"
+            bg="limpeza.jpg"
+            details="A Limpeza de Pele é um procedimento estético que remove impurezas, células mortas e excesso de oleosidade, promovendo uma pele mais saudável, revitalizada e livre de cravos."
+          />
+          <Card
+            content="Peeling Quimico"
+            bg="peeling.jpg"
+            details="O Peeling Químico é um procedimento estético que promove a renovação celular da pele por meio da aplicação de ácidos específicos, melhorando sua textura, luminosidade e uniformidade."
+          />
+          <Card
+            content="Intradermeterapia"
+            bg="intra.png"
+            details="A Intradermoterapia, também conhecida como mesoterapia, é um procedimento estético minimamente invasivo que consiste na aplicação de ativos diretamente na camada intermediária da pele para tratar diversas condições, como flacidez, gordura localizada, celulite e queda capilar."
+          />
+          <Card
+            content="Skinbooster"
+            bg="skinbooster.jpg"
+            details="O Skinbooster é um tratamento estético injetável que promove hidratação profunda e melhora da qualidade da pele, reduzindo linhas finas, rugas e flacidez. ele age de dentro para fora, proporcionando um efeito de rejuvenescimento natural e duradouro."
+          />
         </div>
         <a
           href="https://wa.me/5511952279968"
@@ -203,11 +228,12 @@ export default function Home() {
           {/* Texto e botão */}
           <div className="flex flex-col justify-center h-1/2 p-6 gap-4 w-full md:w-1/2">
             <h1 className="font-bold text-3xl md:text-4xl">
-              Venha conhecer o espaço de Estetica Avançada Dra. Rosiane Gomes
+              Venha conhecer o Espaço Estética Rosiane Gomes!
             </h1>
             <p className="text-xl md:text-2xl">
               Um espaço cuidadosamente projetado para proporcionar uma
               experiência aconchegante, focada no autocuidado e no bem-estar
+              localizado na Cidade Dutra de São Paulo - SP
             </p>
             <div className="flex justify-center">
               <a
