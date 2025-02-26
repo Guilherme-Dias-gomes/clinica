@@ -191,12 +191,12 @@ export default function Home() {
       <section
         data-aos="fade-up"
         id="Sobre"
-        className="flex flex-col md:flex-row h-full items-center justify-center md:justify-around "
+        className="flex flex-col md:flex-row h-full items-center justify-center md:justify-around"
       >
         {/* Conteúdo à esquerda (imagem e texto) */}
-        <div className="flex flex-col md:flex-row items-center justify-around w-full md:w-4/5 h-full text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-around  md:w-4/5 h-full text-center md:text-left">
           {/* Imagem */}
-          <div className="w-full md:w-1/2 h-full rounded-lg ">
+          <div className="h-full rounded-lg">
             <img src="teste2.png" alt="doutora" />
           </div>
 
@@ -229,10 +229,10 @@ export default function Home() {
       </section>
       <section
         data-aos="fade-up"
-        className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:justify-around"
+        className="flex flex-col md:flex-row h-full bg-marrom items-center justify-center md:items-center"
       >
         {/* Conteúdo à esquerda (texto) */}
-        <div className="flex flex-col gap-6 w-full md:w-4/5 p-4 md:p-10">
+        <div className="flex flex-col gap-6 w-full p-4 md:p-10">
           <h1 className="text-3xl md:text-5xl text-center md:text-left">
             Dra. Rosiane Gomes
           </h1>
@@ -261,7 +261,7 @@ export default function Home() {
 
         {/* Imagem à direita */}
         <div className="hidden md:flex items-center justify-center w-full md:w-4/5 h-full">
-          <div className="w-full h-full rounded-3xl">
+          <div className="h-full rounded-3xl">
             <img src="teste2.png" alt="" />
           </div>
         </div>
@@ -368,10 +368,10 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row sm:gap-6 justify-center text-start w-full max-w-4xl p-6 md:p-10">
             {[
               {
-                href: "mailto:guilhermediasgomes2@gmail.com",
+                href: "mailto:drarosianegomes@gmail.com",
                 icon: "gmail.png",
                 label: "Email",
-                name: "guilhermediasgomes2@gmail.com",
+                name: "drarosianegomes@gmail.com",
               },
               {
                 href: "https://wa.me/5511952279968",
