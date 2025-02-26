@@ -118,8 +118,9 @@ export default function Home() {
                   <a
                     href={`#${item}`}
                     className="block py-2 lg:py-0 relative transition duration-300 hover:text-black
-                 before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
-                 before:bg-black before:transition-all before:duration-300 hover:before:w-full"
+           before:content-[''] before:absolute before:left-0 before:bottom-0 before:w-0 before:h-[2px] 
+           before:bg-black before:transition-all before:duration-300 hover:before:w-full"
+                    onClick={() => setIsMenuOpen(false)} // Fecha o menu ao clicar
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </a>
@@ -403,7 +404,7 @@ export default function Home() {
                 href: "https://wa.me/5511956901360",
                 icon: "whatsapp.png",
                 label: "WhatsApp",
-                name: "(11) 95227-9968",
+                name: "(11) 95690-1360",
               },
               {
                 href: "https://www.instagram.com/dra_rosiane_gomes/",
