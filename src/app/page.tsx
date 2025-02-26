@@ -440,14 +440,13 @@ export default function Home() {
         </div>
 
         {/* Rodapé (Copyright) */}
-        <span className="font-bold text-center flex flex-row items-center text-sm md:text-base p-4">
+        <span className="font-bold text-center flex flex-row items-center text-xs md:text-base p-4">
           <a
             href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
-            className="mb-2 md:mb-0 md:mr-2"
           >
             Guilherme Dias
           </a>
-          <p>– Copyright 2025. Todos os direitos reservados.</p>
+          <p> – © 2025. Todos os direitos reservados.</p>
         </span>
       </section>
     </div>
