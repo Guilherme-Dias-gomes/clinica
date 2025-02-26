@@ -69,7 +69,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full p-0 bg-[url('/background.svg')] bg-cover bg-center font-cinzel text-black">
+    <div className="w-full p-0 bg-[url('/background.svg')] bg-cover bg-center font-popi text-black">
       <header
         id="navbar"
         className={`sticky top-0 w-full flex flex-row justify-around items-center p-2 z-10 font-sans transition-all duration-300 ${
@@ -298,7 +298,7 @@ export default function Home() {
         id="Agendar"
         className="flex h-full w-full items-center text-center justify-center mt-5 text-black"
       >
-        <div className="bg-marrom p-8 rounded-lg shadow-lg w-full lg:w-1/2 mt-5 shadow-black">
+        <div className="bg-marrom p-8 rounded-lg shadow-lg w-full m-3 lg:w-1/2 mt-5 shadow-black">
           <h1 className="text-2xl font-bold text-black mb-2">
             Agende sua Avaliação e Descubra o Melhor para Sua Saúde e Beleza!
           </h1>
