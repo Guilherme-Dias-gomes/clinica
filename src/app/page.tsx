@@ -165,7 +165,7 @@ export default function Home() {
         className="flex flex-col h-full bg-marrom items-center justify-around py-5"
       >
         <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto rounded">
           <Card
             content="Toxina Botulínica"
             bg="/botox.jpg"
@@ -440,7 +440,7 @@ export default function Home() {
         </div>
 
         {/* Rodapé (Copyright) */}
-        <span className="font-bold w-full text-center flex flex-col items-center text-sm md:text-base p-4">
+        <span className="font-bold text-center flex flex-row items-center text-sm md:text-base p-4">
           <a
             href="https://portifolio-guilhermediasgomes-projects.vercel.app/"
             className="mb-2 md:mb-0 md:mr-2"
