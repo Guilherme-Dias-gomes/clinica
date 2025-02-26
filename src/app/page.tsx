@@ -69,7 +69,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full p-0 bg-[url('/background.svg')] bg-cover bg-center font-cinzel">
+    <div className="w-full p-0 bg-[url('/background.svg')] bg-cover bg-center font-cinzel text-black">
       <header
         id="navbar"
         className={`sticky top-0 w-full flex flex-row justify-around items-center p-2 z-10 font-sans transition-all duration-300 ${
@@ -142,7 +142,7 @@ export default function Home() {
             completo da pele
           </h1>
           <a
-            href="https://wa.me/5511952279968"
+            href="https://wa.me/5511956901360"
             className="p-4 md:w-1/2 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200 mx-auto md:mx-0"
           >
             AGENDAR CONSULTA
@@ -166,14 +166,14 @@ export default function Home() {
         <h1 className="font-bold text-3xl lg:text-4xl mb-8">Procedimentos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 max-w-6xl mx-auto">
           <Card
-            content="Botox"
+            content="Toxina Botulínica"
             bg="/botox.jpg"
-            details="Essa substância promove um bloqueio neuropático, ou seja, impede a liberação da acetilcolina (substância responsável por conduzir o estímulo do nervo para o músculo). Dessa forma, a contração muscular que causa rugas não ocorre."
+            details="Ea substância bloqueia temporariamente a liberação da acetilcolina, neurotransmissor responsável pela contração muscular. isso impede a movimentação excessiva dos músculos, prevenindo e reduzindo rugas dinâmicas, aquelas formadas pela repetição de expressões faciais."
           />
           <Card
             content="Preenchimento com Ácido hialurônico"
             bg="preenchimento.jpg"
-            details="Essa substância atua bloqueando a liberação da acetilcolina, neurotransmissor responsável pela comunicação entre o nervo e o músculo. Com isso, a contração muscular é reduzida, prevenindo e suavizando rugas, promovendo uma aparência mais jovem e harmoniosa."
+            details="o ácido hialurônico, uma substância naturalmente presente no organismo, é aplicado em áreas específicas do rosto para preencher sulcos, rugas e restaurar o volume perdido com o envelhecimento. além disso, o tratamento melhora a hidratação da pele e estimula a produção de colágeno."
           />
           <Card
             content="Fio de PDO"
@@ -207,7 +207,7 @@ export default function Home() {
           />
         </div>
         <a
-          href="https://wa.me/5511952279968"
+          href="https://wa.me/5511956901360"
           className="mt-8 p-4 md:w-1/3 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
         >
           AGENDAR CONSULTA
@@ -237,7 +237,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://wa.me/5511952279968"
+                href="https://wa.me/5511956901360"
                 className="p-4 font-bold rounded-full text-center bg-nude hover:scale-90 transition-transform duration-200"
               >
                 DESCUBRA SUA MELHOR VERSÃO
@@ -373,7 +373,7 @@ export default function Home() {
           </div>
           <div className="hover:scale-90 transition-transform duration-200">
             <a
-              href="https://wa.me/5511952279968"
+              href="https://wa.me/5511956901360"
               className="p-3 md:p-4 font-bold rounded-full text-center bg-nude text-sm md:text-base"
             >
               MARCAR CONSULTA
@@ -400,7 +400,7 @@ export default function Home() {
                 name: "drarosianegomes@gmail.com",
               },
               {
-                href: "https://wa.me/5511952279968",
+                href: "https://wa.me/5511956901360",
                 icon: "whatsapp.png",
                 label: "WhatsApp",
                 name: "(11) 95227-9968",
